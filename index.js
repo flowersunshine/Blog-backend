@@ -5,6 +5,15 @@ const comment = require('./comment');
 
 const app = express();
 
+const allowCrossDomain = function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    res.header('Access-Control-Allow-Credentials','true');
+    next();
+};
+// 使用中间件支持跨域(设置http的响应头)
+app.use(allowCrossDomain);
 // express的路径匹配模式支持正则表达式
 // 请求文章列表
 app.get('/postlist', post.getPostList);
