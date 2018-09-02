@@ -4,9 +4,10 @@
   "description": "based on express blog backend",
   "main": "index.js",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "marked": "^0.5.0",
-    "mongoskin": "^2.1.0"
+    "mongoose": "^5.2.12"
   },
   "devDependencies": {},
   "scripts": {
