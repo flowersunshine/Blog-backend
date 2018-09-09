@@ -37,6 +37,10 @@ app.put('/read/:id', ancillaryInfo.increaseRead);
 app.put('/like/:id', ancillaryInfo.increaseLike);
 // 通过文章的ID获取文章的评论数量，喜欢数量，阅读数量
 app.get('/ancillaryInfoAndComment/:id', ancillaryInfo.getAncillaryInfoAndComment);
+// 处理跨域访问之前的options试探请求
+app.options('/*', (req, res) => {
+    res.send(true);
+})
 // 允许加载静态资源
 app.use('/static', express.static('assets'));
 // 处理404请求

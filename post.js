@@ -23,6 +23,6 @@ module.exports = {
         console.log(fileData)
         const html = marked(fileData)
         console.log(html)
-        res.send(html)
+        res.send({html,title: article.title})
     }
 }

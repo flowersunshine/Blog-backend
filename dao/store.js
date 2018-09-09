@@ -32,15 +32,17 @@ function getAncillaryInfoAndCommentStore(id, res) {
     let result = {};
     let AncillaryInfoMark = false;
     let CommentMark = false;
-    AncillaryInfo.findOne({articleID: id}, (err, doc) => {
+    AncillaryInfo.findOne({articleID: parseInt(id)}, (err, doc) => {
         if(err) return console.error(err);
-        Object.assign(result, result, doc);
+        console.log(id);
+        console.log(doc);
+        doc && Object.assign(result, result, doc._doc);
         AncillaryInfoMark = true;
         AncillaryInfoMark && CommentMark && res.send(result);
     });
-    Comment.count({articleID: id}, (err, count) => {
+    Comment.countDocuments({articleID: parseInt(id)}, (err, count) => {
         if(err) return console.error(err);
-        result.count = count;
+        result.comments = count;
         CommentMark = true;
         AncillaryInfoMark && CommentMark && res.send(result);
     });
