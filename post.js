@@ -2,6 +2,13 @@ const articleConfig = require("./assets/article/article-config.json");
 const fs = require('fs')
 const marked = require('marked')
 const path = require('path')
+const highlight = require('highlight.js')
+
+marked.setOptions({
+    highlight: function(code) {
+        return highlight.highlightAuto(code).value;
+      },
+});
 
 function getArticle(id) {
     return (item, index, array) => {
