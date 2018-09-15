@@ -2,8 +2,8 @@
     "postlist": [
         {
             "id": 1,
-            "title": "微信小程序利用canvas生成图片保存到本地，图片不全",
-            "description": "微信小程序利用canvas生成图片保存到本地，图片不全",
+            "title": "微信小程序的问题",
+            "description": "总结了工作中微信小程序遇到的问题，不是难点，而是更像是bug",
             "post-date": "2018-09-10",
             "modify-date": "2018-09-10",
             "pic": "http://example.com/pic",
@@ -12,16 +12,6 @@
         },
         {
             "id": 2,
-            "title": "微信小程序canvas上写字时保存为图片在华为p20手机上会出现文字设定不符合预期的效果",
-            "description": "微信小程序canvas上写字时保存为图片在华为p20手机上会出现文字设定不符合预期的效果",
-            "post-date": "2018-09-09",
-            "modify-date": "2018-09-10",
-            "pic": "http://example.com/pic",
-            "path": "2.md",
-            "tag": ["miniprogram"]
-        },
-        {
-            "id": 3,
             "title": "React-Router",
             "description": "对React-Router中的每一个概念都有一个大致上讲解",
             "post-date": "2018-09-10",
@@ -31,7 +21,7 @@
             "tag": ["React-Router"]
         },
         {
-            "id": 4,
+            "id": 3,
             "title": "bootstrap v4栅格系统分析",
             "description": "参照bootstrap的源码分析栅格系统的构建思路",
             "post-date": "2018-09-11",
