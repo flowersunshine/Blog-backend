@@ -59,6 +59,16 @@
 			"pic": "http://example.com/pic",
 			"path": "6.md",
             "tag": ["Redux"]
+		},
+		{
+			"id": 7,
+			"title": "React-Redux学习总结",
+			"description": "这篇文章也是自己在学习React-Redux时自己总结的，有些是直接复制的api说明",
+			"post-date": "2018-10-11",
+			"modify-date": "2018-10-11",
+			"pic": "http://example.com/pic",
+			"path": "7.md",
+            "tag": ["React-Redux"]
 		}
     ]  
 }
