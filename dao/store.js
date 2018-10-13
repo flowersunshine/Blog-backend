@@ -21,6 +21,7 @@ function increaseLikeStore(id, res) {
         res.send(raw);
     });
 }
+// 现已废弃
 function increaseVisitStore(res) {
     Visit.updateOne({}, {$inc: {visitNum: 1}}, (err, raw) => {
         if(err) return console.error(err);
@@ -48,9 +49,16 @@ function getAncillaryInfoAndCommentStore(id, res) {
     });
 }
 function getVisitStore(res) {
-    Visit.findOne({}, (err, doc) => {
+    Visit.updateOne({}, {$inc: {visitNum: 1}}, (err, raw) => {
         if(err) return console.error(err);
-        res.send(doc);
+        if(raw.nModified === 0) {
+            new Visit({visitNum: 1}).save();
+            return res.send(1);
+        }
+        Visit.findOne({}, (err, doc) => {
+            if(err) return console.error(err);
+            res.send(doc);
+        });
     });
 }
 function getCommentStore(id, res) {
