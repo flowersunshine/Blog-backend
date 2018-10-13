@@ -41,11 +41,11 @@ function getAllBrief(id){
 module.exports = {
     getPostList(req, res){
         const result = {};
-        result.postlist = articleConfig;
+        result = articleConfig;
         result.brief = {};
         console.log(articleConfig);
-        const len = Object.keys(articleConfig).length;
-        Object.keys(articleConfig).forEach((item, index) => {
+        const len = Object.keys(articleConfig.postlist).length;
+        Object.keys(articleConfig.postlist).forEach((item, index) => {
             getAllBrief(item.id).then(data => {
                 len--;
                 result.brief = {...result.brief,data};
