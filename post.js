@@ -44,8 +44,8 @@ module.exports = {
         result = articleConfig;
         result.brief = {};
         console.log(articleConfig);
-        const len = Object.keys(articleConfig.postlist).length;
-        Object.keys(articleConfig.postlist).forEach((item, index) => {
+        const len = articleConfig.postlist.length;
+        articleConfig.postlist.forEach((item, index) => {
             getAllBrief(item.id).then(data => {
                 len--;
                 result.brief = {...result.brief,...data};
