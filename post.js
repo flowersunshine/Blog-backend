@@ -3,7 +3,7 @@ const fs = require('fs');
 const marked = require('marked');
 const path = require('path');
 const highlight = require('highlight.js');
-import { Comment, AncillaryInfo } from './dao/model';
+const { Comment, AncillaryInfo } = require('./dao/model');
 
 marked.setOptions({
     highlight: function(code) {
