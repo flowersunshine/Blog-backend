@@ -40,7 +40,7 @@ function getAllBrief(id){
 
 module.exports = {
     getPostList(req, res){
-        const result = {};
+        let result = {};
         result = articleConfig;
         result.brief = {};
         console.log(articleConfig);
