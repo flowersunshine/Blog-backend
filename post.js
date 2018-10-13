@@ -27,13 +27,13 @@ function getAllBrief(id){
             console.log(doc);
             doc && Object.assign(result, result, doc._doc);
             AncillaryInfoMark = true;
-            AncillaryInfoMark && CommentMark && resolve({id: id, ...result});
+            AncillaryInfoMark && CommentMark && resolve({[id]: result});
         });
         Comment.countDocuments({articleID: parseInt(id)}, (err, count) => {
             if(err) return console.error(err);
             result.comments = count;
             CommentMark = true;
-            AncillaryInfoMark && CommentMark && resolve({id: id, ...result});
+            AncillaryInfoMark && CommentMark && resolve({[id]: result});
         });
     });
 }
@@ -48,7 +48,7 @@ module.exports = {
         Object.keys(articleConfig.postlist).forEach((item, index) => {
             getAllBrief(item.id).then(data => {
                 len--;
-                result.brief = {...result.brief,data};
+                result.brief = {...result.brief,...data};
                 if(len === 0){
                     res.send(result);
                 }
