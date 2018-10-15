@@ -4,7 +4,10 @@ function addCommentStore(id, content, date, res) {
     const comment = new Comment({articleID: id, content, date: new Date(date)});
     comment.save((error, data) => {
         if(error) return console.error(error);
-        res.send('ok');
+        Comment.find({articleID: id}, (err, docs) => {
+            if(err) return console.error(err);
+            res.send(docs);
+        });
     });
 }
 function increaseReadStore(id, res) {
