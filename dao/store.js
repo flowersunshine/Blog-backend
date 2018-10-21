@@ -56,7 +56,7 @@ function getVisitStore(res) {
         if(err) return console.error(err);
         if(raw.nModified === 0) {
             new Visit({visitNum: 1}).save();
-            return res.send(1);
+            return res.send({visitNum:1});
         }
         Visit.findOne({}, (err, doc) => {
             if(err) return console.error(err);
